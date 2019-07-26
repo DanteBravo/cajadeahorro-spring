@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+            integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+            crossorigin="anonymous"></script>
+    <style>
+        .bg-dark {
+            background-color: #394C65 !important;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Caja de ahorro</a>
+        <ul class="navbar-nav">
+            <li class="nav-item ml-2 mr-2">
+                <a class="nav-link" href="#">Perfil</a>
+            </li>
+            <li class="nav-item ml-2 mr-2">
+                <a class="nav-link" href="#">Grupos</a>
+            </li>
+            <li class="nav-item ml-2 mr-2">
+                <a class="nav-link" href="#">Configuraciones</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-12 p-5">
+                <div class="card">
+                    <div class="card-header">Créditos Solicitados</div>
+                    <div class="d-flex flex-row justify-content-center align-items-center h-100 p-5">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Finalización</th>
+                                <th scope="col">Duración</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">F.Pago</th>
+                                <th scope="col">interés</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col" colspan="3" class="text-center">Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="credit : ${credits}">
+                                <td th:text="${credit.getGroupId().getDescription()}"/>
+                                <td th:text="${credit.getGroupId().getFinishedDate()}"/>
+                                <td th:text="${credit.getGroupId().getDuration()}"/>
+                                <td th:text="${credit.getGroupId().getAmount()}"/>
+                                <td th:text="${credit.getGroupId().getPaymentFrequency().getName()}"/>
+                                <td th:text="${credit.getInterestRate()}"/>
+                                <td th:text="${credit.getClave().getClave()}"/>
+                                <td><button type="button" class="btn btn-outline-danger">Rechazar</button></td>
+                                <td><button type="button" class="btn btn-outline-success">Autorizar</button></td>
+                                <td><a href="#" class="card-link">Ver detalle</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

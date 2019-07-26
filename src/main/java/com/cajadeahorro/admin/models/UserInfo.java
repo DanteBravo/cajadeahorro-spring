@@ -9,25 +9,24 @@ public class UserInfo {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "clave")
-    private Integer id;
+    private Integer clave;
+    @Column(name = "first_name")
     private String name;
-    @Column(name = "last_name")
-    private String lastName;
-    @Column(name = "middle_name")
-    private String middleName;
-    private String street;
-    private String neighborhood;
-    @Column(name = "postal_code")
-    private String postalCode;
-    private String municipality;
-    private String cellphone;
+    @Column(name = "first_surname")
+    private String firstSurname;
+    @Column(name = "second_surname")
+    private String secondSurname;
+    @Column(name = "phone")
+    private String phone;
+    @Column(name = "id")
+    private String id;
 
-    public Integer getId() {
-        return id;
+    public Integer getClave() {
+        return clave;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setClave(Integer clave) {
+        this.clave = clave;
     }
 
     public String getName() {
@@ -38,59 +37,35 @@ public class UserInfo {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getFirstSurname() {
+        return firstSurname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirstSurname(String firstSurname) {
+        this.firstSurname = firstSurname;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getSecondSurname() {
+        return secondSurname;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public void setSecondSurname(String secondSurname) {
+        this.secondSurname = secondSurname;
     }
 
-    public String getStreet() {
-        return street;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getNeighborhood() {
-        return neighborhood;
+    public String getId() {
+        return id;
     }
 
-    public void setNeighborhood(String neighborhood) {
-        this.neighborhood = neighborhood;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getMunicipality() {
-        return municipality;
-    }
-
-    public void setMunicipality(String municipality) {
-        this.municipality = municipality;
-    }
-
-    public String getCellphone() {
-        return cellphone;
-    }
-
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+    public void setId(String id) {
+        this.id = id;
     }
 }
