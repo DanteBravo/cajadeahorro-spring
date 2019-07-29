@@ -24,10 +24,6 @@ repositories {
 }
 
 dependencies {
-    compile 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1'
-
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
-
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:27.1-jre'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -40,7 +36,9 @@ dependencies {
 
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile 'mysql:mysql-connector-java'
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    providedRuntime 'javax.servlet:jstl:1.2'
+    providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.14'
 }
 
 application {
