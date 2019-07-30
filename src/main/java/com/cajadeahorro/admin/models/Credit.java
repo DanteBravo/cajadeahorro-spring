@@ -31,7 +31,7 @@ public class Credit {
             name = "group_id",
             nullable = false
     )
-    private Group groupId;
+    private Group group;
     @Column(name = "start_date")
     private Timestamp startDate;
 
@@ -51,14 +51,6 @@ public class Credit {
         this.interestRate = interestRate;
     }
 
-    public Group getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(Group groupId) {
-        this.groupId = groupId;
-    }
-
     public Timestamp getStartDate() {
         return startDate;
     }
@@ -73,5 +65,13 @@ public class Credit {
 
     public void setClave(User clave) {
         this.clave = clave;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }
