@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping("/home")
 public class WelcomeController {
@@ -20,8 +22,8 @@ public class WelcomeController {
     public String index(Model model) {
         Iterable<Credit> credits = creditsRepository.findAll();
 
-        model.addAttribute("credits", credits);
+        model.addAttribute("message", "Hi");
 
-        return "home";
+        return "hello";
     }
 }
