@@ -22,7 +22,7 @@ public class Credit {
             name = "user_clave",
             nullable = false
     )
-    private User clave;
+    private User user;
     @ManyToOne(
             fetch = FetchType.EAGER,
             optional = false
@@ -34,6 +34,9 @@ public class Credit {
     private Group group;
     @Column(name = "start_date")
     private Timestamp startDate;
+    @Column(name = "created_at")
+    private Timestamp createdAt;
+
 
     public Integer getId() {
         return id;
@@ -59,12 +62,12 @@ public class Credit {
         this.startDate = startDate;
     }
 
-    public User getClave() {
-        return clave;
+    public User getUser() {
+        return user;
     }
 
-    public void setClave(User clave) {
-        this.clave = clave;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Group getGroup() {
@@ -73,5 +76,13 @@ public class Credit {
 
     public void setGroup(Group group) {
         this.group = group;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 }
