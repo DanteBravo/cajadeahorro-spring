@@ -12,9 +12,8 @@ public class PaymentFrequency {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
-    @Enumerated(EnumType.STRING)
     @Column(name = "name")
-    private PaymentEnum name;
+    private String name;
 
     public Integer getId() {
         return id;
@@ -24,11 +23,11 @@ public class PaymentFrequency {
         this.id = id;
     }
 
-    public PaymentEnum getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(PaymentEnum name) {
+    public void setName(String name) {
         this.name = name;
     }
 }

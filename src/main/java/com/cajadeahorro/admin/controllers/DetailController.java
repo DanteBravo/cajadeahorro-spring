@@ -6,22 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/home")
-public class WelcomeController {
+@RequestMapping("/detail")
+public class DetailController {
 
     @Autowired
     private CreditsRepository creditsRepository;
 
-    @GetMapping
-    public String index(Model model) {
-        Iterable<Credit> credits = creditsRepository.findAll();
+    @GetMapping("{id}")
+    public String index(Model model, @PathVariable("id") int id) {
+        Credit credit = creditsRepository.findById(id).get();
 
-        model.addAttribute("credits", credits);
+        model.addAttribute("credit", credit);
 
-        return "welcome";
+        return "userdetail";
     }
 
 }

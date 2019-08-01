@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class UserInfo {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "clave")
     private Integer clave;
     @Column(name = "first_name")
